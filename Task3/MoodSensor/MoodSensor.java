@@ -1,8 +1,5 @@
 import java.util.Random;
 
-/**
- * Created by АВК on 03.05.2018.
- */
 public class MoodSensor {
     public static final int MOOD_NUMBER = 3;
     public static final String SMILE = ":)";
