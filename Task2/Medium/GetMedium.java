@@ -1,23 +1,24 @@
 public class GetMedium {
-    public static void getMedium(int number) {
+    public static double[] getMedium(int number) {
         int numbers[] = getNumbers(number);
-        double sum = 0, multiply = 1;
-        sum += numbers[0];
-        multiply *= numbers[0];
-        sum += numbers[1];
-        multiply *= numbers[1];
-        sum += numbers[2];
-        multiply *= numbers[2];
-        sum += numbers[3];
-        multiply *= numbers[3];
-        sum += numbers[4];
-        multiply *= numbers[4];
-        sum += numbers[5];
-        multiply *= numbers[5];
+        double medium[] = new double[2];
+        medium[1] = 1;
+        medium[0] += numbers[0];
+        medium[1] *= numbers[0];
+        medium[0] += numbers[1];
+        medium[1] *= numbers[1];
+        medium[0] += numbers[2];
+        medium[1] *= numbers[2];
+        medium[0] += numbers[3];
+        medium[1] *= numbers[3];
+        medium[0] += numbers[4];
+        medium[1] *= numbers[4];
+        medium[0] += numbers[5];
+        medium[1] *= numbers[5];
 
-        System.out.println("sum = " + sum / numbers.length);
-        double algMedium = Math.pow(multiply, 1.0 / numbers.length);
-        System.out.printf("multiply = %.3f", algMedium);
+        medium[0] /= numbers.length;
+        medium[1] = Math.pow(medium[1], 1.0 / numbers.length);
+        return medium;
     }
 
     private static int[] getNumbers(int number) {
