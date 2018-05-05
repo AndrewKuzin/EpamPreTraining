@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        Swap.getSwap();
+        System.out.println("swaped a = "+Swap.getSwap(1,2)[0]+" swaped b = "+Swap.getSwap(1,2)[1]);
     }
 }
