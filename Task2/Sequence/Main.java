@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        CheckNumber.check();
+        System.out.println(4321+CheckNumber.check(4321));
     }
 }
