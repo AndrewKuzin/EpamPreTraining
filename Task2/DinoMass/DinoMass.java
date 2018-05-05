@@ -1,13 +1,13 @@
-import java.util.Scanner;
-
 public class DinoMass {
-    public static void countMass() {
-        System.out.println("input dino mass:");
-        Scanner in = new Scanner(System.in);
-        int mass = in.nextInt();
+
+    public static final long MILLIS_IN_KILO = 1_000_000L;
+    public static final int GRAMS_IN_KILO = 1000;
+    public static final float KILOS_IN_TON = 1000F;
+
+    public static void countMass(int mass) {
         System.out.println("mass in kilos = " + mass);
-        System.out.println("mass in milligrams = " + mass * 1_000_000L);
-        System.out.println("mass in grams = " + mass * 1000);
-        System.out.println("mass in tons = " + mass / 1000F);
+        System.out.println("mass in milligrams = " + mass * MILLIS_IN_KILO);
+        System.out.println("mass in grams = " + mass * GRAMS_IN_KILO);
+        System.out.println("mass in tons = " + mass / KILOS_IN_TON);
     }
 }
