@@ -1,42 +1,50 @@
-import java.util.Scanner;
-
 public class CheckNumber {
-    public static void check() {
-        System.out.println("input number:");
-        Scanner in = new Scanner(System.in);
-        int number = in.nextInt();
+    public static String check(int number) {
         int numbers[] = getNumbers(number);
         boolean sequence = true;
-        for (int i = 1; i < numbers.length; i++) {
-            if (numbers[i] <= numbers[i - 1]) {
-                sequence = false;
-            }
+        if (numbers[1] <= numbers[0]) {
+            sequence = false;
         }
+        if (numbers[2] <= numbers[1]) {
+            sequence = false;
+        }
+        if (numbers[3] <= numbers[2]) {
+            sequence = false;
+        }
+
         if (sequence == true) {
-            System.out.println(number + " is downcoming sequence");
+            return " is downcoming sequence";
         } else {
             sequence = true;
-            for (int i = 1; i < numbers.length; i++) {
-                if (numbers[i] >= numbers[i - 1]) {
-                    sequence = false;
-                }
+            if (numbers[1] >= numbers[0]) {
+                sequence = false;
             }
+            if (numbers[2] >= numbers[1]) {
+                sequence = false;
+            }
+            if (numbers[3] >= numbers[2]) {
+                sequence = false;
+            }
+
             if (sequence == true) {
-                System.out.println(number + " is upcoming sequence");
+                return " is upcoming sequence";
             } else {
-                System.out.println(number + " is not sequence");
+                return " is not sequence";
             }
         }
 
     }
 
     private static int[] getNumbers(int number) {
-        int i = 0, numbers[] = new int[4];
-        while (number > 0) {
-            numbers[i] = number % 10;
-            number /= 10;
-            i++;
-        }
+        int numbers[] = new int[4];
+        numbers[0] = number % 10;
+        number /= 10;
+        numbers[1] = number % 10;
+        number /= 10;
+        numbers[2] = number % 10;
+        number /= 10;
+        numbers[3] = number % 10;
+
         return numbers;
     }
 }
